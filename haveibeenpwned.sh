@@ -10,7 +10,7 @@ firstfive=${hash:0:5}
 everythingelse=${hash:5}
 
 res=$(curl -s "https://api.pwnedpasswords.com/range/$firstfive")
-count=`echo "$res" | grep -i "$everythingelse"`
+count=`echo "$res" | grep -i $everythingelse`
 clean=`echo $count | sed 's/.*://'`
 
 echo $clean
